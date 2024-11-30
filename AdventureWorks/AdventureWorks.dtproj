@@ -8,11 +8,21 @@
     <Name>AdventureWorks.database</Name>
     <FullPath>AdventureWorks.database</FullPath>
   </Database>
-  <DataSources />
+  <DataSources>
+    <ProjectItem>
+      <Name>AdventureWorksDS.ds</Name>
+      <FullPath>AdventureWorksDS.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
   <DataSourceViews />
   <DeploymentModelSpecificContent>
     <Manifest>
       <DTSPackages>
+        <DtsPackage FormatVersion="8">
+          <Name>Product.dtsx</Name>
+          <FullPath>Product.dtsx</FullPath>
+          <References />
+        </DtsPackage>
         <DtsPackage FormatVersion="8">
           <Name>Territory.dtsx</Name>
           <FullPath>Territory.dtsx</FullPath>
@@ -28,9 +38,21 @@
       <Name>Development</Name>
       <Options>
         <OutputPath>bin</OutputPath>
-        <ConnectionMappings />
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>AdventureWorksDS</Id>
+            <Name>AdventureWorksDS</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=DESKTOP-C65KP3T;Integrated Security=SSPI;Initial Catalog=AdventureWorks</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
         <ConnectionProviderMappings />
-        <ConnectionSecurityMappings />
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>AdventureWorksDS</Id>
+            <Name>AdventureWorksDS</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
         <DatabaseStorageLocations />
         <TargetServerVersion>SQLServer2022</TargetServerVersion>
         <AzureMode>false</AzureMode>

@@ -11,21 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{C276E4C8-344A-45D9-9A27-1A7DA292C846}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{2F594206-6C17-4A59-ADCC-8003DBDDBA4A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-C65KP3T.AdventureWorks]"
+      DTS:refId="Package.ConnectionManagers[AdventureWorksDS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0C7482A2-9C87-47C3-A1A9-F911EAFA1319}"
-      DTS:ObjectName="DESKTOP-C65KP3T.AdventureWorks">
+      DTS:DTSID="{3355346D-D494-4720-A6FD-54B3A4E5955A}"
+      DTS:ObjectName="AdventureWorksDS">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::TargetDBConnection]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-C65KP3T;Initial Catalog=AdventureWorks;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0C7482A2-9C87-47C3-A1A9-F911EAFA1319}DESKTOP-C65KP3T.AdventureWorks;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-C65KP3T;Initial Catalog=AdventureWorks;Provider=SQLNCLI11.1;Integrated Security=SSPI;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -33,6 +35,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{7ABFF994-3D00-4EF3-9CC0-D276A04A8679}"
       DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FlatFileConnection]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -84,7 +88,66 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5351246D-61CE-419E-8A31-053A11389625}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::FlatFilePath]+ @[User::FlatFileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FlatFileConnection">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Rajesh Panda\Downloads\Learn Data Engineering\SSIS\AdventureWorks\FlatFile\Territory Lookup.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{485A1D1E-F6F3-4531-8663-1DDBA53FFB10}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FlatFileName">
+      <DTS:VariableValue
+        DTS:DataType="8">Territory Lookup.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5CD68240-A06C-4F67-82BB-98679EB244DC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FlatFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Rajesh Panda\Downloads\Learn Data Engineering\SSIS\AdventureWorks\FlatFile\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{27FD6D55-7FD2-4419-B772-F121AF1AB3E9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetDatabaseIP">
+      <DTS:VariableValue
+        DTS:DataType="8">DESKTOP-C65KP3T</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{63D08062-1A98-45F4-9C00-58619862135F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetDatabaseName">
+      <DTS:VariableValue
+        DTS:DataType="8">AdventureWorks</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{279D340A-1785-4AA3-B115-708690327C67}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Provider=SQLNCLI11.1;Data Source=&quot;+ @[User::TargetDatabaseIP] + &quot;;Integrated Security=SSPI;Initial Catalog=&quot; + @[User::TargetDatabaseName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetDBConnection">
+      <DTS:VariableValue
+        DTS:DataType="8">Provider=SQLNCLI11.1;Data Source=DESKTOP-C65KP3T;Integrated Security=SSPI;Initial Catalog=AdventureWorks</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Data Flow Task"
@@ -332,8 +395,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Insert Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-C65KP3T.AdventureWorks]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-C65KP3T.AdventureWorks]"
+                  connectionManagerID="Package.ConnectionManagers[AdventureWorksDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -455,8 +518,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-C65KP3T.AdventureWorks]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-C65KP3T.AdventureWorks]"
+                  connectionManagerID="Package.ConnectionManagers[AdventureWorksDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -636,8 +699,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Slowly Changing Dimension.Connections[LookupConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-C65KP3T.AdventureWorks]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-C65KP3T.AdventureWorks]"
+                  connectionManagerID="Package.ConnectionManagers[AdventureWorksDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDS]"
                   description="Defines the connection to use for lookups in the dimension table"
                   name="LookupConnection" />
               </connections>
@@ -832,25 +895,25 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="236.5,20.5" />
+          TopLeft="236.5,5.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Data Flow Task\Slowly Changing Dimension"
           TopLeft="207.5,107.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="312,62.5">
+          TopLeft="312,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,37.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -862,80 +925,80 @@
         <NodeLayout
           Size="163,42"
           Id="Package\Data Flow Task\Insert Destination"
-          TopLeft="76.5000000000001,196.5" />
+          TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[New Output]"
           TopLeft="278.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-120.5,47"
+              EndConnector="-191.5,60"
               Start="0,0"
-              End="-120.5,39.5">
+              End="-191.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.014245014245" />
+                    End="0,20.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.014245014245"
-                    Point2="0,19.014245014245"
-                    Point3="-4,19.014245014245" />
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="-116.5,19.014245014245" />
+                    End="-187.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="-116.5,19.014245014245"
-                    Point2="-120.5,19.014245014245"
-                    Point3="-120.5,23.014245014245" />
+                    Point1="-187.5,24.2735042735043"
+                    Point2="-191.5,24.2735042735043"
+                    Point3="-191.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="-120.5,39.5" />
+                    End="-191.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-87.34138671875,24.014245014245,54.1827734375,11.43359375"
+              BoundingBox="-122.84138671875,29.2735042735043,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="166,42"
           Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="363,200.5" />
+          TopLeft="229,209.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Changing Attribute Updates Output]"
           TopLeft="345.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100.5,51"
+              EndConnector="-33.5,60"
               Start="0,0"
-              End="100.5,43.5">
+              End="-33.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.6324786324786" />
+                    End="0,20.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.6324786324786"
-                    Point2="0,20.6324786324786"
-                    Point3="4,20.6324786324786" />
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="96.5,20.6324786324786" />
+                    End="-29.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="96.5,20.6324786324786"
-                    Point2="100.5,20.6324786324786"
-                    Point3="100.5,24.6324786324786" />
+                    Point1="-29.5,24.2735042735043"
+                    Point2="-33.5,24.2735042735043"
+                    Point3="-33.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="100.5,43.5" />
+                    End="-33.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-28.28390625,25.6324786324786,157.0678125,11.6630859375"
+              BoundingBox="-95.28390625,29.2735042735043,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -950,7 +1013,7 @@
         <Value
           type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{0C7482A2-9C87-47C3-A1A9-F911EAFA1319}&lt;/ConnectionID&gt;
+  &lt;ConnectionID&gt;{3355346D-D494-4720-A6FD-54B3A4E5955A}&lt;/ConnectionID&gt;
   &lt;TableName&gt;[dbo].[AW_Territory]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
