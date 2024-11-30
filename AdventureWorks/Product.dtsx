@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{0338BA3A-C11D-45C3-AC01-C92E8F8C0B4B}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{8C2D1D93-4079-4C43-8F19-FFDE3D553681}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -70,6 +70,123 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Product Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{96DBE3AE-D4DD-46BF-89DE-1302046D2A63}"
+      DTS:ObjectName="Product Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FlatFilePath] +  @[User::FlatFileNameP]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Rajesh Panda\Downloads\Learn Data Engineering\SSIS\AdventureWorks\FlatFile\Product Lookup.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductKey"
+              DTS:DTSID="{FBB6448D-0B52-4496-8A26-375C5F45E687}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductSubcategoryKey"
+              DTS:DTSID="{41325EC8-7253-4EBB-840B-8EFA6050CBEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductSKU"
+              DTS:DTSID="{99C81AF3-0EA5-4EF1-B18A-39850E5FB245}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="35"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductName"
+              DTS:DTSID="{6B8F2EB0-E440-4E15-99F3-D29F83A73CDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ModelName"
+              DTS:DTSID="{F735C717-FC34-4B04-8D78-EABC2E591C70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductDescription"
+              DTS:DTSID="{849F9029-538C-4F70-A9AC-5886547718B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductColor"
+              DTS:DTSID="{F76FEF67-FD37-4AB8-AC6F-827C993C3F48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductSize"
+              DTS:DTSID="{114B2584-0106-42E1-B679-A2C3F4265EE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductStyle"
+              DTS:DTSID="{27C735F3-B6B4-49E0-BEF7-0CD7F74F2E98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductCost"
+              DTS:DTSID="{02CE4B60-C078-46B8-A373-322445331660}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductPrice"
+              DTS:DTSID="{F7534DA2-03B8-44A3-A920-F44B72CA15C9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Product Subcategories Connection Manager]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{36D99636-9498-427C-A11A-F92B7B5CFBCD}"
@@ -118,6 +235,15 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{30F3F4DD-F2BC-4C32-B61A-43E7618DE918}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FlatFileNameP">
+      <DTS:VariableValue
+        DTS:DataType="8">Product Lookup.csv</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{96AD75A0-C112-4D70-82B7-7FF0AB2DA2F4}"
@@ -186,6 +312,1264 @@
       DTS:ObjectName="Sequence Container">
       <DTS:Variables />
       <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Product"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{79E97566-FD74-48A7-9983-81B083359AF8}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Product"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Product\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Product\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Product Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Product Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductKey]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductKey]"
+                          name="ProductKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSubcategoryKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductSubcategoryKey]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSubcategoryKey]"
+                          name="ProductSubcategoryKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSKU]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductSKU]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSKU]"
+                          name="ProductSKU"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
+                          length="35"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
+                          name="ProductName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ModelName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ModelName]"
+                          length="30"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ModelName]"
+                          name="ModelName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductDescription]"
+                          length="250"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]"
+                          name="ProductDescription"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductColor]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductColor]"
+                          length="15"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductColor]"
+                          name="ProductColor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSize]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductSize]"
+                          length="5"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSize]"
+                          name="ProductSize"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductStyle]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductStyle]"
+                          length="5"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductStyle]"
+                          name="ProductStyle"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCost]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductCost]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCost]"
+                          name="ProductCost"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductPrice]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductPrice]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductPrice]"
+                          name="ProductPrice"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductKey]"
+                          dataType="i4"
+                          name="ProductKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductSubcategoryKey]"
+                          dataType="i4"
+                          name="ProductSubcategoryKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductSKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="ProductSKU" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="35"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ModelName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="ModelName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="ProductDescription" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductColor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="ProductColor" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductSize]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="ProductSize" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductStyle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="ProductStyle" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductCost]"
+                          dataType="cy"
+                          name="ProductCost" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductPrice]"
+                          dataType="cy"
+                          name="ProductPrice" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Product\Insert Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AW_Product]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Product\Insert Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[AdventureWorksDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductKey"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductKey]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductSubcategoryKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductSubcategoryKey"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductSubcategoryKey]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSubcategoryKey]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductSKU]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="ProductSKU"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductSKU]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSKU]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="35"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ModelName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="ModelName"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModelName]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ModelName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductDescription]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="ProductDescription"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductDescription]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductColor]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="ProductColor"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductColor]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductColor]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductSize]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="ProductSize"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductSize]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSize]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductStyle]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="ProductStyle"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductStyle]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductStyle]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductCost]"
+                          cachedDataType="cy"
+                          cachedName="ProductCost"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductCost]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCost]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].Columns[ProductPrice]"
+                          cachedDataType="cy"
+                          cachedName="ProductPrice"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductPrice]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductPrice]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                          dataType="i4"
+                          name="ProductKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductSubcategoryKey]"
+                          dataType="i4"
+                          name="ProductSubcategoryKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductSKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="ProductSKU" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="35"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModelName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="ModelName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="ProductDescription" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductColor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="ProductColor" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductSize]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="ProductSize" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductStyle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="ProductStyle" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductCost]"
+                          dataType="cy"
+                          name="ProductCost" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductPrice]"
+                          dataType="cy"
+                          name="ProductPrice" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Product\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Product\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Product\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Product\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[AW_Product] SET [ModelName] = ?,[ProductColor] = ?,[ProductCost] = ?,[ProductDescription] = ?,[ProductName] = ?,[ProductPrice] = ?,[ProductSize] = ?,[ProductSKU] = ?,[ProductStyle] = ?,[ProductSubcategoryKey] = ? WHERE [ProductKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Product\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[AdventureWorksDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ModelName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="ModelName"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ModelName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductColor]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="ProductColor"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductColor]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductCost]"
+                          cachedDataType="cy"
+                          cachedName="ProductCost"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCost]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductDescription]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="ProductDescription"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductKey"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductKey]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="35"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductPrice]"
+                          cachedDataType="cy"
+                          cachedName="ProductPrice"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductPrice]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductSize]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="ProductSize"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSize]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductSKU]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="ProductSKU"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSKU]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductStyle]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="ProductStyle"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductStyle]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductSubcategoryKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductSubcategoryKey"
+                          externalMetadataColumnId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSubcategoryKey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="cy"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="35"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="cy"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          dataType="i4"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          dataType="i4"
+                          name="Param_10">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Product\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Product\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Product\Slowly Changing Dimension"
+                  componentClassID="Microsoft.SCD"
+                  contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+                  description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+                  name="Slowly Changing Dimension"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SELECT statement used to create a schema rowset."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [ModelName], [ProductColor], [ProductCost], [ProductDescription], [ProductKey], [ProductName], [ProductPrice], [ProductSize], [ProductSKU], [ProductStyle], [ProductSubcategoryKey] FROM [dbo].[AW_Product]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                      name="CurrentRowWhere"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                      name="UpdateChangingAttributeHistory">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                      name="FailOnFixedAttributeChange">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the column name for the inferred member."
+                      name="InferredMemberIndicator"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether inferred member updates are detected."
+                      name="EnableInferredMember">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                      name="FailOnLookupFailure">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies that all rows in the input are new or the transformation detects the change type."
+                      name="IncomingRowChangeType"
+                      typeConverter="IncomingRowChangeType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Product\Slowly Changing Dimension.Connections[LookupConnection]"
+                      connectionManagerID="Package.ConnectionManagers[AdventureWorksDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDS]"
+                      description="Defines the connection to use for lookups in the dimension table"
+                      name="LookupConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                      name="Slowly Changing Dimension Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ModelName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="ModelName"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ModelName]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ModelName]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductColor]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="ProductColor"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductColor]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductColor]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductCost]"
+                          cachedDataType="cy"
+                          cachedName="ProductCost"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductCost]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCost]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductDescription]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="ProductDescription"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductDescription]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductKey"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductKey]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductKey]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="35"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductName]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductPrice]"
+                          cachedDataType="cy"
+                          cachedName="ProductPrice"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductPrice]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductPrice]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductSize]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="ProductSize"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductSize]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSize]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductSKU]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="ProductSKU"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductSKU]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSKU]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductStyle]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="ProductStyle"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductStyle]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductStyle]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductSubcategoryKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductSubcategoryKey"
+                          externalMetadataColumnId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductSubcategoryKey]"
+                          lineageId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSubcategoryKey]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ModelName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="ModelName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductColor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="ProductColor" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductCost]"
+                          dataType="cy"
+                          name="ProductCost" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="ProductDescription" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductKey]"
+                          dataType="i4"
+                          name="ProductKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="35"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductPrice]"
+                          dataType="cy"
+                          name="ProductPrice" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductSize]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="ProductSize" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductSKU]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="ProductSKU" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductStyle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="ProductStyle" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductSubcategoryKey]"
+                          dataType="i4"
+                          name="ProductSubcategoryKey" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Product\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                      description="Unchanged rows"
+                      exclusionGroup="1"
+                      name="Unchanged Output"
+                      synchronousInputId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Product\Slowly Changing Dimension.Outputs[New Output]"
+                      description="New rows"
+                      exclusionGroup="1"
+                      name="New Output"
+                      synchronousInputId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Product\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                      description="Rows with changes in columns tagged FixedAttribute"
+                      exclusionGroup="1"
+                      name="Fixed Attribute Output"
+                      synchronousInputId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Product\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                      description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                      exclusionGroup="1"
+                      name="Changing Attribute Updates Output"
+                      synchronousInputId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Product\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                      description="HistoricalAttribute (Type 2) changes result in these new rows"
+                      exclusionGroup="2"
+                      name="Historical Attribute Inserts Output"
+                      synchronousInputId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Product\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                      description="Information to update unpopulated initial dimension row"
+                      exclusionGroup="1"
+                      name="Inferred Member Updates Output"
+                      synchronousInputId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Product.Paths[Changing Attribute Updates Output]"
+                  endId="Package\Sequence Container\Product\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Changing Attribute Updates Output"
+                  startId="Package\Sequence Container\Product\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+                <path
+                  refId="Package\Sequence Container\Product.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Product\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Product\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Product.Paths[New Output]"
+                  endId="Package\Sequence Container\Product\Insert Destination.Inputs[OLE DB Destination Input]"
+                  name="New Output"
+                  startId="Package\Sequence Container\Product\Slowly Changing Dimension.Outputs[New Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Sequence Container\ProductCategory"
           DTS:CreationName="Microsoft.Pipeline"
@@ -1046,7 +2430,7 @@
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[AW_ProductSubcategory] SET [ProductSubcategoryKey] = ?,[SubcategoryName] = ? WHERE [ProductCategoryKey] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[AW_ProductSubcategory] SET [SubcategoryName] = ? WHERE [ProductSubcategoryKey] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1069,16 +2453,10 @@
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductCategoryKey]"
-                          cachedDataType="i4"
-                          cachedName="ProductCategoryKey"
-                          externalMetadataColumnId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Sequence Container\ProductSubcategory\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCategoryKey]" />
-                        <inputColumn
                           refId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductSubcategoryKey]"
                           cachedDataType="i4"
                           cachedName="ProductSubcategoryKey"
-                          externalMetadataColumnId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          externalMetadataColumnId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           lineageId="Package\Sequence Container\ProductSubcategory\Flat File Source.Outputs[Flat File Source Output].Columns[ProductSubcategoryKey]" />
                         <inputColumn
                           refId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].Columns[SubcategoryName]"
@@ -1086,28 +2464,17 @@
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="SubcategoryName"
-                          externalMetadataColumnId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          externalMetadataColumnId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           lineageId="Package\Sequence Container\ProductSubcategory\Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          dataType="i4"
-                          name="Param_0">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           codePage="1252"
                           dataType="str"
                           length="20"
-                          name="Param_1">
+                          name="Param_0">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -1116,9 +2483,9 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          refId="Package\Sequence Container\ProductSubcategory\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="i4"
-                          name="Param_2">
+                          name="Param_1">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -1173,7 +2540,7 @@
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [ProductCategoryKey], [ProductSubcategoryKey], [SubcategoryName] FROM [dbo].[AW_ProductSubcategory]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [ProductSubcategoryKey], [SubcategoryName] FROM [dbo].[AW_ProductSubcategory]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -1222,19 +2589,6 @@
                       name="Slowly Changing Dimension Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\ProductSubcategory\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductCategoryKey]"
-                          cachedDataType="i4"
-                          cachedName="ProductCategoryKey"
-                          externalMetadataColumnId="Package\Sequence Container\ProductSubcategory\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductCategoryKey]"
-                          lineageId="Package\Sequence Container\ProductSubcategory\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCategoryKey]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Sequence Container\ProductSubcategory\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProductSubcategoryKey]"
                           cachedDataType="i4"
                           cachedName="ProductSubcategoryKey"
@@ -1244,7 +2598,7 @@
                             <property
                               dataType="System.Int32"
                               name="ColumnType"
-                              typeConverter="ColumnType">2</property>
+                              typeConverter="ColumnType">1</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -1265,10 +2619,6 @@
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\ProductSubcategory\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductCategoryKey]"
-                          dataType="i4"
-                          name="ProductCategoryKey" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\ProductSubcategory\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductSubcategoryKey]"
                           dataType="i4"
@@ -1364,6 +2714,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Sequence Container\ProductSubcategory" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{44320CFF-A424-4767-A7DD-353E089C37D8}"
+          DTS:From="Package\Sequence Container\ProductSubcategory"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Product" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -1378,7 +2736,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\Sequence Container\ProductCategory"
@@ -1409,43 +2767,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="227,222"
-          Size="227,265"
-          Id="Package\Sequence Container"
-          TopLeft="175,74" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Sequence Container\ProductCategory">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Sequence Container\ProductCategory\Flat File Source"
-          TopLeft="236.5,5.5" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Sequence Container\ProductCategory\Slowly Changing Dimension"
-          TopLeft="207.5,107.5" />
+          Size="115,42"
+          Id="Package\Sequence Container\Product"
+          TopLeft="65,168" />
         <EdgeLayout
-          Id="Package\Sequence Container\ProductCategory.Paths[Flat File Source Output]"
-          TopLeft="312,47.5">
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="121,135">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,33"
               Start="0,0"
-              End="0,52.5">
+              End="0,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1454,10 +2793,41 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="227,265"
+          Size="227,308"
+          Id="Package\Sequence Container"
+          TopLeft="175,74" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[AdventureWorksDS]">
+    <DataSourceID>AdventureWorksDS</DataSourceID>
+  </ConnectionManager>
+  <TaskHost
+    design-time-name="Package\Sequence Container\ProductCategory">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="163,42"
           Id="Package\Sequence Container\ProductCategory\Insert Destination"
           TopLeft="49.5000000000001,209.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Sequence Container\ProductCategory\Flat File Source"
+          TopLeft="236.5,5.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence Container\ProductCategory\OLE DB Command"
+          TopLeft="357,205.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Sequence Container\ProductCategory\Slowly Changing Dimension"
+          TopLeft="207.5,107.5" />
         <EdgeLayout
           Id="Package\Sequence Container\ProductCategory.Paths[New Output]"
           TopLeft="278.5,149.5">
@@ -1494,10 +2864,28 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Sequence Container\ProductCategory\OLE DB Command"
-          TopLeft="357,205.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\ProductCategory.Paths[Flat File Source Output]"
+          TopLeft="312,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\ProductCategory.Paths[Changing Attribute Updates Output]"
           TopLeft="345.5,149.5">
@@ -1580,37 +2968,33 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <ConnectionManager
-    design-time-name="Package.ConnectionManagers[AdventureWorksDS]">
-    <DataSourceID>AdventureWorksDS</DataSourceID>
-  </ConnectionManager>
   <TaskHost
     design-time-name="Package\Sequence Container\ProductSubcategory">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Sequence Container\ProductSubcategory\Flat File Source"
-          TopLeft="231.5,42.5" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Sequence Container\ProductSubcategory\Slowly Changing Dimension"
           TopLeft="207.5,107.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Sequence Container\ProductSubcategory\Flat File Source"
+          TopLeft="236.5,5.5" />
         <EdgeLayout
           Id="Package\Sequence Container\ProductSubcategory.Paths[Flat File Source Output]"
-          TopLeft="309.5,84.5">
+          TopLeft="312,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,15.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1622,80 +3006,80 @@
         <NodeLayout
           Size="163,42"
           Id="Package\Sequence Container\ProductSubcategory\Insert Destination"
-          TopLeft="71.5000000000001,187.5" />
+          TopLeft="120.5,198.5" />
         <EdgeLayout
           Id="Package\Sequence Container\ProductSubcategory.Paths[New Output]"
           TopLeft="278.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-125.5,38"
+              EndConnector="-76.5,49"
               Start="0,0"
-              End="-125.5,30.5">
+              End="-76.5,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.3732193732194" />
+                    End="0,15.8233618233618" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.3732193732194"
-                    Point2="0,15.3732193732194"
-                    Point3="-4,15.3732193732194" />
+                    Point1="0,15.8233618233618"
+                    Point2="0,19.8233618233618"
+                    Point3="-4,19.8233618233618" />
                   <mssgle:LineSegment
-                    End="-121.5,15.3732193732194" />
+                    End="-72.5,19.8233618233618" />
                   <mssgle:CubicBezierSegment
-                    Point1="-121.5,15.3732193732194"
-                    Point2="-125.5,15.3732193732194"
-                    Point3="-125.5,19.3732193732194" />
+                    Point1="-72.5,19.8233618233618"
+                    Point2="-76.5,19.8233618233618"
+                    Point3="-76.5,23.8233618233618" />
                   <mssgle:LineSegment
-                    End="-125.5,30.5" />
+                    End="-76.5,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-89.84138671875,20.3732193732194,54.1827734375,11.43359375"
+              BoundingBox="-65.34138671875,24.8233618233618,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="166,42"
           Id="Package\Sequence Container\ProductSubcategory\OLE DB Command"
-          TopLeft="381,183.5" />
+          TopLeft="364,207.5" />
         <EdgeLayout
           Id="Package\Sequence Container\ProductSubcategory.Paths[Changing Attribute Updates Output]"
           TopLeft="345.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.5,34"
+              EndConnector="101.5,58"
               Start="0,0"
-              End="118.5,26.5">
+              End="101.5,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.75498575498576" />
+                    End="0,19.4643874643875" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.75498575498576"
-                    Point2="0,13.7549857549858"
-                    Point3="4,13.7549857549858" />
+                    Point1="0,19.4643874643875"
+                    Point2="0,23.4643874643875"
+                    Point3="4,23.4643874643875" />
                   <mssgle:LineSegment
-                    End="114.5,13.7549857549858" />
+                    End="97.5,23.4643874643875" />
                   <mssgle:CubicBezierSegment
-                    Point1="114.5,13.7549857549858"
-                    Point2="118.5,13.7549857549858"
-                    Point3="118.5,17.7549857549858" />
+                    Point1="97.5,23.4643874643875"
+                    Point2="101.5,23.4643874643875"
+                    Point3="101.5,27.4643874643875" />
                   <mssgle:LineSegment
-                    End="118.5,26.5" />
+                    End="101.5,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.28390625,18.7549857549858,157.0678125,11.6630859375"
+              BoundingBox="-27.78390625,28.4643874643875,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1716,18 +3100,233 @@
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductCategoryKey]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;ProductCategoryKey&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductSubcategoryKey]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;ProductSubcategoryKey&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[SubcategoryName]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;SubcategoryName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Product">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Sequence Container\Product\Flat File Source"
+          TopLeft="236.5,5.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Sequence Container\Product\Slowly Changing Dimension"
+          TopLeft="207.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Product.Paths[Flat File Source Output]"
+          TopLeft="312,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence Container\Product\Insert Destination"
+          TopLeft="87.5000000000001,209.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Product.Paths[New Output]"
+          TopLeft="278.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.5,60"
+              Start="0,0"
+              End="-109.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-105.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-105.5,24.2735042735043"
+                    Point2="-109.5,24.2735042735043"
+                    Point3="-109.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-109.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-81.84138671875,29.2735042735043,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence Container\Product\OLE DB Command"
+          TopLeft="371,200.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Product.Paths[Changing Attribute Updates Output]"
+          TopLeft="345.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.5,51"
+              Start="0,0"
+              End="108.5,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6324786324786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.6324786324786"
+                    Point2="0,20.6324786324786"
+                    Point3="4,20.6324786324786" />
+                  <mssgle:LineSegment
+                    End="104.5,20.6324786324786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.5,20.6324786324786"
+                    Point2="108.5,20.6324786324786"
+                    Point3="108.5,24.6324786324786" />
+                  <mssgle:LineSegment
+                    End="108.5,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.28390625,25.6324786324786,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Product\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{3355346D-D494-4720-A6FD-54B3A4E5955A}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[AW_Product]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ModelName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ModelName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductColor]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductColor&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductCost]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductCost&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductDescription]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductDescription&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductKey]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductKey&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductPrice]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductPrice&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductSize]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductSize&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductSKU]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductSKU&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductStyle]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductStyle&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Flat File Source.Outputs[Flat File Source Output].Columns[ProductSubcategoryKey]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ProductSubcategoryKey&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
