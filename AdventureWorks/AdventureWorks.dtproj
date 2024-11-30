@@ -19,6 +19,11 @@
     <Manifest>
       <DTSPackages>
         <DtsPackage FormatVersion="8">
+          <Name>Returns.dtsx</Name>
+          <FullPath>Returns.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
           <Name>Product.dtsx</Name>
           <FullPath>Product.dtsx</FullPath>
           <References />
