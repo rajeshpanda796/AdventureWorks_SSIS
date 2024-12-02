@@ -47,3 +47,53 @@ CREATE TABLE AW_Returns(
         REFERENCES AW_Product(ProductKey) -- Don't Need LookUP
 )
 
+CREATE TABLE AW_Customer(
+	CustomerKey	INT PRIMARY KEY,
+	Prefix		VARCHAR(5),
+	FirstName	VARCHAR(20),
+	LastName	VARCHAR(20),
+	BirthDate	DATE,
+	MaritalStatus CHAR(1) CHECK (MaritalStatus IN ('M', 'S')),
+	Gender		VARCHAR(2),
+	EmailAddress	VARCHAR(50),
+	AnnualIncome	NUMERIC(10),
+	TotalChildren	NUMERIC(2),
+	EducationLevel	VARCHAR(20),
+	Occupation		VARCHAR(20),
+	HomeOwner CHAR(1) CHECK (HomeOwner IN ('N', 'Y'))
+)
+
+CREATE TABLE AW_SalesOrder(
+	OrderDate	DATE,
+	StockDate	DATE,
+	OrderNumber	VARCHAR(10) PRIMARY KEY,
+	ProductKey	INT,
+	CustomerKey	INT,
+	TerritoryKey INT,	
+	OrderLineItem	NUMERIC(5),
+	OrderQuantity	NUMERIC(5),
+	CONSTRAINT FK_SOProductKey FOREIGN KEY (ProductKey) 
+        REFERENCES AW_Product(ProductKey),
+	CONSTRAINT FK_CustomerKey FOREIGN KEY (CustomerKey) 
+        REFERENCES AW_Customer(CustomerKey),
+	CONSTRAINT FK_SOTerritoryKey FOREIGN KEY (TerritoryKey) 
+        REFERENCES AW_Territory(SalesTerritoryKey)
+)
+
+
+-- Disable all table constraints
+ALTER TABLE AW_SalesOrder NOCHECK CONSTRAINT ALL
+-- Enable all table constraints
+ALTER TABLE AW_SalesOrder CHECK CONSTRAINT ALL
+-- ----------
+-- Disable single constraint
+ALTER TABLE YourTableName NOCHECK CONSTRAINT YourConstraint
+-- Enable single constraint
+ALTER TABLE YourTableName CHECK CONSTRAINT YourConstraint
+
+
+ALTER TABLE AW_SalesOrder DROP CONSTRAINT FK_CustomerKey;
+
+ALTER TABLE AW_SalesOrder
+ADD CONSTRAINT FK_CustomerKey
+FOREIGN KEY (CustomerKey) REFERENCES [AW_Customer](CustomerKey);

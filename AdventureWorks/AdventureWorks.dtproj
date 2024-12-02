@@ -19,13 +19,28 @@
     <Manifest>
       <DTSPackages>
         <DtsPackage FormatVersion="8">
-          <Name>Returns.dtsx</Name>
-          <FullPath>Returns.dtsx</FullPath>
+          <Name>AllPackage.dtsx</Name>
+          <FullPath>AllPackage.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="0">
+          <Name>Customer.dtsx</Name>
+          <FullPath>Customer.dtsx</FullPath>
           <References />
         </DtsPackage>
         <DtsPackage FormatVersion="8">
           <Name>Product.dtsx</Name>
           <FullPath>Product.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Returns.dtsx</Name>
+          <FullPath>Returns.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="0">
+          <Name>SalesOrder.dtsx</Name>
+          <FullPath>SalesOrder.dtsx</FullPath>
           <References />
         </DtsPackage>
         <DtsPackage FormatVersion="8">
