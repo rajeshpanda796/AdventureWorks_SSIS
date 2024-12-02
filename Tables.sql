@@ -66,12 +66,13 @@ CREATE TABLE AW_Customer(
 CREATE TABLE AW_SalesOrder(
 	OrderDate	DATE,
 	StockDate	DATE,
-	OrderNumber	VARCHAR(10) PRIMARY KEY,
+	OrderNumber	VARCHAR(10),
 	ProductKey	INT,
 	CustomerKey	INT,
 	TerritoryKey INT,	
 	OrderLineItem	NUMERIC(5),
 	OrderQuantity	NUMERIC(5),
+	UNIQUE (OrderNumber, ProductKey),
 	CONSTRAINT FK_SOProductKey FOREIGN KEY (ProductKey) 
         REFERENCES AW_Product(ProductKey),
 	CONSTRAINT FK_CustomerKey FOREIGN KEY (CustomerKey) 
