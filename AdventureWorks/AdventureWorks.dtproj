@@ -23,7 +23,7 @@
           <FullPath>AllPackage.dtsx</FullPath>
           <References />
         </DtsPackage>
-        <DtsPackage FormatVersion="0">
+        <DtsPackage FormatVersion="8">
           <Name>Customer.dtsx</Name>
           <FullPath>Customer.dtsx</FullPath>
           <References />
@@ -38,7 +38,7 @@
           <FullPath>Returns.dtsx</FullPath>
           <References />
         </DtsPackage>
-        <DtsPackage FormatVersion="0">
+        <DtsPackage FormatVersion="8">
           <Name>SalesOrder.dtsx</Name>
           <FullPath>SalesOrder.dtsx</FullPath>
           <References />

@@ -1,18 +1,22 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
+  DTS:CheckpointFileName="C:\Users\Rajesh Panda\Downloads\Learn Data Engineering\SSIS\AdventureWorks\CheckPointFile.txt"
+  DTS:CheckpointUsage="1"
   DTS:CreationDate="12/2/2024 7:58:43 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-C65KP3T"
   DTS:CreatorName="DESKTOP-C65KP3T\Rajesh Panda"
   DTS:DTSID="{C9B185C8-6201-459F-BBCD-B6B9091FA6CA}"
   DTS:ExecutableType="Microsoft.Package"
+  DTS:FailParentOnFailure="True"
   DTS:LastModifiedProductVersion="16.0.5467.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{CC3D4B2C-A5D7-4B43-AB6D-6E0C05762787}">
+  DTS:SaveCheckpoints="True"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{F8518C24-6D79-44FA-A914-CDC3CA7DB5EB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -49,7 +53,7 @@
         DTS:Name="ConnectionString">@[User::PackagePath]+ @[User::PackageToRun5]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="C:\Users\Rajesh Panda\Downloads\Learn Data Engineering\SSIS\AdventureWorks\AdventureWorks\Return.dtsx" />
+          DTS:ConnectionString="C:\Users\Rajesh Panda\Downloads\Learn Data Engineering\SSIS\AdventureWorks\AdventureWorks\Returns.dtsx" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -130,7 +134,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="PackageToRun5">
       <DTS:VariableValue
-        DTS:DataType="8">Return.dtsx</DTS:VariableValue>
+        DTS:DataType="8">Returns.dtsx</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -140,6 +144,8 @@
       DTS:Description="Execute Package Task"
       DTS:DTSID="{7a72c3f2-0963-45a2-8674-9e14b399c581}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:FailParentOnFailure="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="Customer Master"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -156,6 +162,8 @@
       DTS:Description="Execute Package Task"
       DTS:DTSID="{37852BE1-61C5-45D1-88CA-504A1538CFEE}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:FailParentOnFailure="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="Product Master"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -172,6 +180,8 @@
       DTS:Description="Execute Package Task"
       DTS:DTSID="{374c7aa3-3479-48a4-9b30-776205d27b5a}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:FailParentOnFailure="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="Return Master"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -188,6 +198,8 @@
       DTS:Description="Execute Package Task"
       DTS:DTSID="{299d591e-6f8e-4de8-861b-ec8a9f9eb1a2}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:FailParentOnFailure="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="SalesOrder Master"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -204,6 +216,8 @@
       DTS:Description="Execute Package Task"
       DTS:DTSID="{3AF0C624-55FC-40C9-BB5C-F1484898B486}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:FailParentOnFailure="True"
       DTS:LocaleID="-1"
       DTS:ObjectName="Territory Master"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -262,16 +276,28 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="183,42"
-          Id="Package\Territory Master"
-          TopLeft="81,31" />
+          Size="159,42"
+          Id="Package\Customer Master"
+          TopLeft="328,106" />
         <NodeLayout
           Size="150,42"
           Id="Package\Product Master"
-          TopLeft="328,30" />
+          TopLeft="329,29" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Return Master"
+          TopLeft="94,186" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\SalesOrder Master"
+          TopLeft="85,109" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Territory Master"
+          TopLeft="82,30" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="264,51.5">
+          TopLeft="265,50.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -291,13 +317,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Customer Master"
-          TopLeft="327,107" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="404.75,72">
+          TopLeft="405.75,71">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -317,28 +339,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Return Master"
-          TopLeft="94,186" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\SalesOrder Master"
-          TopLeft="85,109" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="327,129">
+          TopLeft="328,128.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-77,0"
+              EndConnector="-78,0"
               Start="0,0"
-              End="-69.5,0">
+              End="-70.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-69.5,0" />
+                    End="-70.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
