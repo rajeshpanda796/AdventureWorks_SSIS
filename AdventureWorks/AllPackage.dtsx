@@ -15,8 +15,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:SaveCheckpoints="True"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{F8518C24-6D79-44FA-A914-CDC3CA7DB5EB}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{994B7C50-8D01-45C2-8865-7F87E5D12BEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -279,44 +279,6 @@
           Size="159,42"
           Id="Package\Customer Master"
           TopLeft="328,106" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Product Master"
-          TopLeft="329,29" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Return Master"
-          TopLeft="94,186" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\SalesOrder Master"
-          TopLeft="85,109" />
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Territory Master"
-          TopLeft="82,30" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="265,50.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="64,0"
-              Start="0,0"
-              End="56.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="56.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="405.75,71">
@@ -361,6 +323,36 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Product Master"
+          TopLeft="329,29" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="265,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64,0"
+              Start="0,0"
+              End="56.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Return Master"
+          TopLeft="94,186" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="167,151">
@@ -383,6 +375,14 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="165,42"
+          Id="Package\SalesOrder Master"
+          TopLeft="85,109" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Territory Master"
+          TopLeft="82,30" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
