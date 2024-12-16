@@ -425,12 +425,12 @@
         <MaxLength>19</MaxLength>
         <LengthDistribution>
           <LengthDistributionItem>
-            <Length>9</Length>
-            <Count>5261</Count>
-          </LengthDistributionItem>
-          <LengthDistributionItem>
             <Length>15</Length>
             <Count>8091</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>5261</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>19</Length>
@@ -3553,15 +3553,15 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>MR.</RegexText>
-            <Frequency>51</Frequency>
+            <Frequency>52</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>MRS.</RegexText>
-            <Frequency>35</Frequency>
+            <Frequency>36</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>MS.</RegexText>
-            <Frequency>13</Frequency>
+            <Frequency>12</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
@@ -3594,11 +3594,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>M</RegexText>
-            <Frequency>54</Frequency>
+            <Frequency>55</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>S</RegexText>
-            <Frequency>46</Frequency>
+            <Frequency>45</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
@@ -3609,11 +3609,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>M</RegexText>
-            <Frequency>51</Frequency>
+            <Frequency>52</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>F</RegexText>
-            <Frequency>49</Frequency>
+            <Frequency>48</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
@@ -3624,11 +3624,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>\p{L}+\d\d@ADVENTURE-WORKS\.COM</RegexText>
-            <Frequency>73</Frequency>
+            <Frequency>72</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>\p{L}+\d@ADVENTURE-WORKS\.COM</RegexText>
-            <Frequency>27</Frequency>
+            <Frequency>28</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
@@ -3639,15 +3639,15 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>PARTIAL COLLEGE</RegexText>
-            <Frequency>28</Frequency>
+            <Frequency>27</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>BACHELORS</RegexText>
-            <Frequency>29</Frequency>
+            <Frequency>28</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>GRADUATE DEGREE</RegexText>
-            <Frequency>17</Frequency>
+            <Frequency>18</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>HIGH SCHOOL</RegexText>
@@ -3666,11 +3666,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>PROFESSIONAL</RegexText>
-            <Frequency>30</Frequency>
+            <Frequency>31</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>SKILLED MANUAL</RegexText>
-            <Frequency>25</Frequency>
+            <Frequency>24</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>MANAGEMENT</RegexText>
@@ -3693,11 +3693,11 @@
         <TopRegexPatterns>
           <PatternDistributionItem>
             <RegexText>Y</RegexText>
-            <Frequency>68</Frequency>
+            <Frequency>67</Frequency>
           </PatternDistributionItem>
           <PatternDistributionItem>
             <RegexText>N</RegexText>
-            <Frequency>32</Frequency>
+            <Frequency>33</Frequency>
           </PatternDistributionItem>
         </TopRegexPatterns>
       </ColumnPatternProfile>
