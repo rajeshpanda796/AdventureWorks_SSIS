@@ -16,8 +16,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:SaveCheckpoints="True"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{65AC5AE8-D865-4F06-B92D-B353284B30B5}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{08649B06-89EC-457A-BD38-85EC5D9E6229}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -140,53 +140,17 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Return Master"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{374c7aa3-3479-48a4-9b30-776205d27b5a}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:FailPackageOnFailure="True"
-      DTS:FailParentOnFailure="True"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Return Master"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <Connection>{C996B0E2-4594-4BC3-995E-0BF97903AF6D}</Connection>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\SalesOrder Master"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{299d591e-6f8e-4de8-861b-ec8a9f9eb1a2}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:FailPackageOnFailure="True"
-      DTS:FailParentOnFailure="True"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="SalesOrder Master"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <Connection>{3D9DADDC-FDB2-4051-B45F-4DF076040EB7}</Connection>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Sequence Container"
+      DTS:refId="Package\Dimensions Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{9D892844-258D-4BA5-91F0-60F74BECC53F}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sequence Container">
+      DTS:ObjectName="Dimensions Container">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Customer Master"
+          DTS:refId="Package\Dimensions Container\Customer Master"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{7a72c3f2-0963-45a2-8674-9e14b399c581}"
@@ -204,7 +168,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Product Master"
+          DTS:refId="Package\Dimensions Container\Product Master"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{37852BE1-61C5-45D1-88CA-504A1538CFEE}"
@@ -222,7 +186,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Territory Master"
+          DTS:refId="Package\Dimensions Container\Territory Master"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{3AF0C624-55FC-40C9-BB5C-F1484898B486}"
@@ -241,24 +205,64 @@
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Facts Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{E2DE4927-7653-416C-810F-592431B071C4}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Facts Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Facts Container\Return Master"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{374c7aa3-3479-48a4-9b30-776205d27b5a}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:FailPackageOnFailure="True"
+          DTS:FailParentOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Return Master"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <Connection>{C996B0E2-4594-4BC3-995E-0BF97903AF6D}</Connection>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Facts Container\SalesOrder Master"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{299d591e-6f8e-4de8-861b-ec8a9f9eb1a2}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:FailPackageOnFailure="True"
+          DTS:FailParentOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SalesOrder Master"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <Connection>{3D9DADDC-FDB2-4051-B45F-4DF076040EB7}</Connection>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{CCC351D4-9F5C-45C4-838C-21DA904C8717}"
-      DTS:From="Package\Sequence Container"
+      DTS:DTSID="{57BAFD3C-488A-4EFD-BC33-37BE184D8B46}"
+      DTS:From="Package\Dimensions Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\SalesOrder Master" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
-      DTS:CreationName=""
-      DTS:DTSID="{1FF324DF-DA56-4602-A80D-E7651285E560}"
-      DTS:From="Package\SalesOrder Master"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Return Master" />
+      DTS:To="Package\Facts Container" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -273,68 +277,53 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="145,42"
-          Id="Package\Return Master"
-          TopLeft="302,258" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\SalesOrder Master"
-          TopLeft="287,186" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="372,228">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30"
-              Start="0,0"
-              End="0,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="159,42"
-          Id="Package\Sequence Container\Customer Master"
+          Id="Package\Dimensions Container\Customer Master"
           TopLeft="196.5,5" />
         <NodeLayout
           Size="150,42"
-          Id="Package\Sequence Container\Product Master"
+          Id="Package\Dimensions Container\Product Master"
           TopLeft="386.5,7" />
         <NodeLayout
           Size="156,42"
-          Id="Package\Sequence Container\Territory Master"
+          Id="Package\Dimensions Container\Territory Master"
           TopLeft="5.5,5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="542,72"
           Size="542,115"
-          Id="Package\Sequence Container"
+          Id="Package\Dimensions Container"
           TopLeft="95,32" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Facts Container\Return Master"
+          TopLeft="232,15" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Facts Container\SalesOrder Master"
+          TopLeft="26,15" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="401,80"
+          Size="401,123"
+          Id="Package\Facts Container"
+          TopLeft="168,202" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="367.75,147">
+          TopLeft="367.25,147">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="0,55"
               Start="0,0"
-              End="0,31.5">
+              End="0,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
